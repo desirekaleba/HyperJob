@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Signup to HyperJob!</title>
+  </head>
+  <body>
+    <div><a href="/">Go home</a></div>
+    <form method="post" action="signup">
+      {% csrf_token %}
+      <table>{{ form.as_table }}</table>
+      <button type="submit">Signup</button>
+    </form>
+  </body>
+</html>

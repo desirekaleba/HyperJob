@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Resumes - HyperJob</title>
+  </head>
+
+  <body>
+    <div><a href="/">&#x3C;- Main page</a></div>
+    <h2>Resumes</h2>
+    {% for resume in resumes %}
+      <div>{{ resume.author }}: {{ resume.description }}</div>
+    {% endfor %}
+  </body>
+
+</html>

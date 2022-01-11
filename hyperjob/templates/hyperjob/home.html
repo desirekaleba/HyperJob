@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Profile - HyperJob</title>
+  </head>
+
+  <body>
+    <div><a href="/">&#x3C;- Main page</a></div>
+    <h2>Profile</h2>
+    {% if not is_authenticated %}
+      <p>Hello, <b>Guest</b></p>
+      <div><a href="/login">Login</a></div>
+      <div><a href="/signup">Signup</a></div>
+    {% else %}
+      <p>Hello, <b>{{ username }}</b> (<a href="/logout">Logout</a>)</p>
+      {% if is_staff %}
+        <p>Create new vacancy:</p>
+        <form method="post" action="/vacancies/new">{% csrf_token %}
+          <table>{{ form.as_table }}</table>
+          <button type="submit">Send</button>
+        </form>
+      {% else %}
+        <p>Create new resume:</p>
+        <form method="post" action="/resumes/new">{% csrf_token %}
+          <table>{{ form.as_table }}</table>
+          <button type="submit">Send</button>
+        </form>
+      {% endif %}
+    {% endif %}
+  </body>
+
+</html>

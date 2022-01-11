@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Add Vacancy - HyperJob</title>
+  </head>
+
+  <body>
+    <div><a href="/">&#x3C;- Main page</a></div>
+    <h2>Add Vacancy</h2>
+    <form method="post" action="new">{% csrf_token %}
+      <table>{{ add_vacancy_form.as_table }}</table>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+
+</html>
